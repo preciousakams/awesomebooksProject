@@ -8,8 +8,8 @@ class Book {
 
 class UI {
     static displayBooks(){
-        const books = Store.getBooks();
-        
+        const books = BookList.getBooks();
+
         books.forEach((book) => UI.addBookToList(book));
     }
 
@@ -31,7 +31,7 @@ class UI {
           el.parentElement.parentElement.remove();
         }
       }
-     
+
       static showAlert(message, className){
         const div = document.createElement('div');
         div.className = `alert alert-${className}`
@@ -50,4 +50,16 @@ class UI {
       }
 }
 
-// Store class: Handles storage
+// Storage
+
+class BookList {
+  getBooks() {
+    let books;
+    if (localStorage.getItem('books') === null) {
+      books = [];
+    } else {
+      books = JSON.parse(localStorage.getItem('books'));
+    }
+    return books;
+  }
+}
