@@ -53,7 +53,7 @@ class UI {
 // Storage
 
 class BookList {
-  getBooks() {
+  getList() {
     let books;
     if (localStorage.getItem('books') === null) {
       books = [];
@@ -61,5 +61,19 @@ class BookList {
       books = JSON.parse(localStorage.getItem('books'));
     }
     return books;
+  }
+  addItem (book) {
+    let books = BookList.getList();
+    books.push(book);
+    localStorage.setItem('books', JSON.stringify(books));
+  }
+  deleteItem (book) {
+    let books = BookList.getList();
+    books.forEach((book, index) => {
+      if(book.title === book) {
+        books.splice(index, 1);
+      }
+    });
+    localStorage.setItem('books', JSON.stringify(books));
   }
 }
