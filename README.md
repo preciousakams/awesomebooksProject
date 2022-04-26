@@ -1,5 +1,8 @@
-# Book List: A book list build without frame works.
-***
+
+## Book List: A book list build without frame works.
+
+>This is project built to show collections of books, and give users access to add new books or remove an existing book
+
 ## [Deployed Version]()
 
 ## Built With
@@ -7,13 +10,19 @@
 * JavaScript
 
 ## Getting Started
-***
-Clone the repository to get a local copy
-From the cloned project directory
-Run `npm install`
 
-### Prerequisites
-* Node.JS
+***To get a local copy open and running follow these simple example steps.
+
+   ## Setup
+
+   - Download or Clone Repository.
+
+   ## Installation
+
+ - Once folder in your text editor:
+
+Run `npm install` command to install all dependencies. N.B: Make sure that you have node installed in your commputer, if not [Download Node](https://nodejs.org/en/)
+
 
 ### Authors
 ***
