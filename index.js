@@ -1,41 +1,33 @@
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-alert */
+/* eslint-disable max-classes-per-file */
 class Book {
-  constructor(title, author){
+  constructor(title, author) {
     this.title = title;
     this.author = author;
   }
 }
 
-class UI {
+class BookUI {
   static displayBooks() {
-    const books = BookList.getBooks();
-    books.forEach((book) => UI.addBookToList(book));
+    const books = BookList.getList();
+    books.forEach((book) => BookUI.addBooks(book));
   }
 
-  static addBookToList(book) {
+  static addBooks(book) {
     const list = document.querySelector('#book-Collection');
-    const row = document.createElement('tr');
-    row.innerHTML = `<td>${book.title}</td>
-      <td>${book.author}</td>
-      <td><a href="#" class="btn delete">Remove</a></td>`;
-    list.appendChild(row);
+    const bookDiv = document.createElement('div');
+    bookDiv.innerHTML = `<h4>${book.title}</h4>
+      <h4>${book.author}</h4>
+     <h4> <a href="#" class="delete">Remove</a></h4>
+      <hr>`;
+    list.appendChild(bookDiv);
   }
 
   static deleteBook(el) {
     if (el.classList.contains('delete')) {
       el.parentElement.parentElement.remove();
     }
-  }
-
-  static showAlert(message, className) {
-    const div = document.createElement('div');
-    div.className = `alert alert-${className}`;
-    div.appendChild(document.createTextNode(message));
-    const container = document.querySelector('.container');
-    const form = document.querySelector('#bookForm');
-    container.insertBefore(div, form);
-
-    //  Vanish in 3 seconds
-    setTimeout(() => document.querySelector('.alert').remove(), 2000);
   }
 
   static clearFilds() {
@@ -47,7 +39,7 @@ class UI {
 // Storage
 
 class BookList {
-  getList() {
+  static getList() {
     let books;
     if (localStorage.getItem('books') === null) {
       books = [];
@@ -57,19 +49,41 @@ class BookList {
     return books;
   }
 
-  addItem(book) {
-    let books = BookList.getList();
+  static addItem(book) {
+    const books = BookList.getList();
     books.push(book);
     localStorage.setItem('books', JSON.stringify(books));
   }
 
-  deleteItem(book) {
-    let books = BookList.getList();
+  static deleteItem(title) {
+    const books = BookList.getList();
     books.forEach((book, index) => {
-      if (book.title === book) {
+      if (book.title === title) {
         books.splice(index, 1);
       }
     });
     localStorage.setItem('books', JSON.stringify(books));
   }
 }
+
+document.addEventListener('DOMContentLoaded', BookUI.displayBooks);
+document.querySelector('#bookForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const title = document.querySelector('#title').value;
+  const author = document.querySelector('#author').value;
+  if (title === '' || author === '') {
+    alert('Please fill in all fields!');
+  } else {
+    const book = new Book(title, author);
+    BookUI.addBooks(book);
+    BookList.addItem(book);
+    alert('Book added');
+    BookUI.clearFilds();
+  }
+});
+document.getElementById('book-Collection').addEventListener('click', (e) => {
+  BookUI.deleteBook(e.target);
+  // eslint-disable-next-line max-len
+  BookList.deleteItem(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
+  alert('Book Removed');
+});
