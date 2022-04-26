@@ -11,7 +11,7 @@
 
 ## Getting Started
 
-***To get a local copy open and running follow these simple example steps.
+- To get a local copy open and running follow these simple example steps.
 
    ## Setup
 
