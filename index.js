@@ -45,7 +45,7 @@ class BookUI {
     const bookRow = document.createElement('tr');
     bookRow.innerHTML = `<th id="th1">${book.title}</th>
       <th id="th2">${`by ${book.author}`}</th>
-     <th id="th3"> <a href="#" class="delete">Remove</a></th>
+     <th id="th3"> <button class="delete">Remove</button></th>
       `;
     list.appendChild(bookRow);
   }
