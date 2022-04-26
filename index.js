@@ -1,4 +1,3 @@
-/* eslint-disable no-alert */
 /* eslint-disable max-classes-per-file */
 class Book {
   constructor(title, author) {
@@ -68,19 +67,14 @@ document.querySelector('#bookForm').addEventListener('submit', (e) => {
   e.preventDefault();
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
-  if (title === '' || author === '') {
-    alert('Please fill in all fields!');
-  } else {
-    const book = new Book(title, author);
-    BookUI.addBooks(book);
-    BookList.addItem(book);
-    alert('Book added');
-    BookUI.clearFilds();
-  }
+
+  const book = new Book(title, author);
+  BookUI.addBooks(book);
+  BookList.addItem(book);
+  BookUI.clearFilds();
 });
 document.getElementById('book-Collection').addEventListener('click', (e) => {
   BookUI.deleteBook(e.target);
   // eslint-disable-next-line max-len
   BookList.deleteItem(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
-  alert('Book Removed');
 });
