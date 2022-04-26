@@ -1,1 +1,55 @@
-/* stylelint-disable no-empty-source */
+.container {
+  font-weight: bolder;
+}
+
+header {
+  text-align: center;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border: 5px solid;
+  margin: 24px 0;
+}
+
+td,
+th {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #ddd;
+}
+
+#th1,
+#th2 {
+  width: 8%;
+}
+
+#th3 {
+  text-align: right;
+}
+
+hr {
+  width: 270px;
+  height: 5px;
+  background-color: black;
+}
+
+#add h1,
+form {
+  text-align: center;
+}
+
+form input {
+  width: 40%;
+  font-weight: bolder;
+}
+
+#submit {
+  width: auto;
+  margin-left: 35%;
+}

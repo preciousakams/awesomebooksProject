@@ -42,12 +42,12 @@ class BookUI {
 
   static addBooks(book) {
     const list = document.querySelector('#book-Collection');
-    const bookDiv = document.createElement('div');
-    bookDiv.innerHTML = `<h4>${book.title}</h4>
-      <h4>${book.author}</h4>
-     <h4> <a href="#" class="delete">Remove</a></h4>
-      <hr>`;
-    list.appendChild(bookDiv);
+    const bookRow = document.createElement('tr');
+    bookRow.innerHTML = `<th id="th1">${book.title}</th>
+      <th id="th2">${`by ${book.author}`}</th>
+     <th id="th3"> <a href="#" class="delete">Remove</a></th>
+      `;
+    list.appendChild(bookRow);
   }
 
   static deleteBook(el) {
