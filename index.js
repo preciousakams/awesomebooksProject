@@ -44,10 +44,13 @@ class BookUI {
     const list = document.querySelector('#book-Collection');
     const bookRow = document.createElement('tr');
     bookRow.innerHTML = `<th id="th1">${book.title}</th>
-      <th id="th2">${`by ${book.author}`}</th>
-     <th id="th3"> <button class="delete">Remove</button></th>
+    <th id="th2">${`by ${book.author}`}</th> 
+    <th id="th3"> <button class="delete">Remove</button></th> 
       `;
-    list.appendChild(bookRow);
+      if(book.title !== '' && book.author !== ''){
+         list.appendChild(bookRow);
+         
+      }
   }
 
   static deleteBook(el) {
@@ -77,4 +80,42 @@ document.getElementById('book-Collection').addEventListener('click', (e) => {
   BookUI.deleteBook(e.target);
   // eslint-disable-next-line max-len
   BookList.deleteItem(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
+});
+
+
+const openContact = document.querySelector('#contact');
+const addList = document.querySelector('#add');
+const addNew = document.querySelector('#add-list');
+const allBooks = document.querySelector('#list');
+const date = document.querySelector('#myDate');
+
+window.addEventListener('load', () => {
+  date.innerHTML = Date();
+}),
+
+
+
+openContact.onclick = () => {
+  document.querySelector('#contact-us').style.display = 'block';
+  addList.style.display = 'none';
+  document.querySelector('#allBooks').style.display = 'none';
+
+}
+
+addNew.onclick = () => {
+  document.querySelector('#contact-us').style.display = 'none';
+  document.querySelector('#allBooks').style.display = 'none';
+  addList.style.display = 'block';
+}
+
+allBooks.onclick = () => {
+  document.querySelector('#allBooks').style.display = 'block';
+  document.querySelector('#contact-us').style.display = 'none';
+  addList.style.display = 'none';
+}
+
+window.addEventListener('load', () => {
+  document.querySelector('#allBooks').style.display = 'block';
+  document.querySelector('#contact-us').style.display = 'none';
+  addList.style.display = 'none';
 });
