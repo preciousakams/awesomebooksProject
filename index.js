@@ -1,4 +1,13 @@
 /* eslint-disable max-classes-per-file */
+
+function displayClock() {
+  const display = new Date().toLocaleTimeString();
+  document.getElementById('clock').innerHTML = display;
+  setTimeout(displayClock, 1000);
+}
+
+window.onload = displayClock();
+
 class Book {
   constructor(title, author) {
     this.title = title;
