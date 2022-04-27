@@ -47,10 +47,9 @@ class BookUI {
     <th id="th2">${`by ${book.author}`}</th> 
     <th id="th3"> <button class="delete">Remove</button></th> 
       `;
-      if(book.title !== '' && book.author !== ''){
-         list.appendChild(bookRow);
-         
-      }
+    if (book.title !== '' && book.author !== '') {
+      list.appendChild(bookRow);
+    }
   }
 
   static deleteBook(el) {
@@ -82,37 +81,34 @@ document.getElementById('book-Collection').addEventListener('click', (e) => {
   BookList.deleteItem(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
 });
 
-
 const openContact = document.querySelector('#contact');
 const addList = document.querySelector('#add');
 const addNew = document.querySelector('#add-list');
 const allBooks = document.querySelector('#list');
 const date = document.querySelector('#myDate');
 
+// eslint-disable-next-line no-unused-expressions
 window.addEventListener('load', () => {
   date.innerHTML = Date();
-}),
-
-
+});
 
 openContact.onclick = () => {
   document.querySelector('#contact-us').style.display = 'block';
   addList.style.display = 'none';
   document.querySelector('#allBooks').style.display = 'none';
-
-}
+};
 
 addNew.onclick = () => {
   document.querySelector('#contact-us').style.display = 'none';
   document.querySelector('#allBooks').style.display = 'none';
   addList.style.display = 'block';
-}
+};
 
 allBooks.onclick = () => {
   document.querySelector('#allBooks').style.display = 'block';
   document.querySelector('#contact-us').style.display = 'none';
   addList.style.display = 'none';
-}
+};
 
 window.addEventListener('load', () => {
   document.querySelector('#allBooks').style.display = 'block';
