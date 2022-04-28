@@ -1,5 +1,7 @@
 .container {
   font-weight: bolder;
+  width: 100%;
+  overflow: hidden;
 }
 
 header {
@@ -9,9 +11,8 @@ header {
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 95%;
   border: 5px solid;
-  margin: 24px 0;
 }
 
 td,
@@ -31,13 +32,6 @@ tr:nth-child(even) {
 
 #th3 {
   text-align: right;
-}
-
-.list hr {
-  margin: auto;
-  width: 270px;
-  height: 5px;
-  background-color: black;
 }
 
 .addNew {
@@ -63,7 +57,7 @@ form input {
 }
 
 .active {
-  color: goldenrod;
+  color: blue;
 }
 
 .contact {
@@ -80,6 +74,16 @@ form input {
   font-size: 3rem;
   margin-bottom: 3rem;
   text-align: center;
+}
+
+footer p {
+  width: 92%;
+  border: 5px solid black;
+  padding: 0.5rem;
+  position: fixed;
+  bottom: 0;
+  margin-left: 2%;
+  font-weight: bold;
 }
 
 .contact p,
@@ -108,15 +112,33 @@ form input {
   text-align: center;
 }
 
-footer {
-  width: 100%;
-  border: 3px solid black;
-  padding: 0.5rem;
-  position: fixed;
-  bottom: 0;
-  text-align: center;
-}
-
 .clock {
   text-align: right;
+}
+
+.navbar-nav {
+  list-style-type: none;
+  border: 6px solid;
+  margin: 0 27px;
+  padding: 5px 24px 24px 24px;
+}
+
+.navbar-nav li {
+  float: right;
+}
+
+.one,
+.two {
+  border-right: 3px solid;
+}
+
+.navbar-nav .logo {
+  float: left;
+}
+
+.nav-item a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  margin: 0 12px;
 }
