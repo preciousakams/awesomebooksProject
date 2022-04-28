@@ -10,8 +10,11 @@ const contactSection = document.querySelector('.contact');
 
 btnList.addEventListener('click', () => {
   btnList.classList.add('active');
+  btnList.classList.remove('inActive');
   addNewBtn.classList.remove('active');
+  addNewBtn.classList.add('inctive');
   contactBtn.classList.remove('active');
+  contactBtn.classList.add('inActive');
   listSection.style.display = 'block';
   addNewSection.style.display = 'none';
   contactSection.style.display = 'none';
@@ -19,8 +22,11 @@ btnList.addEventListener('click', () => {
 
 addNewBtn.addEventListener('click', () => {
   btnList.classList.remove('active');
+  btnList.classList.add('inActive');
   addNewBtn.classList.add('active');
+  addNewBtn.classList.remove('inActive');
   contactBtn.classList.remove('active');
+  contactBtn.classList.add('inActive');
   listSection.style.display = 'none';
   addNewSection.style.display = 'block';
   contactSection.style.display = 'none';
@@ -28,8 +34,11 @@ addNewBtn.addEventListener('click', () => {
 
 contactBtn.addEventListener('click', () => {
   btnList.classList.remove('active');
+  btnList.classList.add('inActive');
   addNewBtn.classList.remove('active');
+  addNewBtn.classList.add('inActive');
   contactBtn.classList.add('active');
+  contactBtn.classList.remove('inActive');
   listSection.style.display = 'none';
   addNewSection.style.display = 'none';
   contactSection.style.display = 'flex';
@@ -41,15 +50,14 @@ function formatAMPM(date) {
   hours %= 12;
   hours = hours || 12; // the hour '0' should be '12'
   // eslint-disable-next-line no-use-before-define
-  let minutes = date.getMinutes();
-  let seconds = date.getSeconds();
+  const minutes = date.getMinutes();
+  const seconds = date.getSeconds();
   const strTime = `${hours}:${minutes}:${seconds} ${ampm}`;
   return strTime;
 }
 
 function displayClock() {
   const display = new Date(); // .toLocaleTimeString();
-  const time = display.toLocaleTimeString();
   const month = display.getUTCMonth() + 1;
   const day = display.getUTCDate();
   const year = display.getUTCFullYear();

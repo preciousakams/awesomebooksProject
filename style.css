@@ -2,6 +2,7 @@
   font-weight: bolder;
   width: 100%;
   overflow: hidden;
+  color: black;
 }
 
 header {
@@ -58,6 +59,10 @@ form input {
 
 .active {
   color: blue;
+}
+
+.inActive {
+  color: black;
 }
 
 .contact {
@@ -140,6 +145,5 @@ footer p {
 .nav-item a {
   display: block;
   text-decoration: none;
-  color: black;
   margin: 0 12px;
 }
