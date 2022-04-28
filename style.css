@@ -33,13 +33,21 @@ tr:nth-child(even) {
   text-align: right;
 }
 
-hr {
+.list hr {
+  margin: auto;
   width: 270px;
   height: 5px;
   background-color: black;
 }
 
-#add h1,
+.addNew {
+  display: none;
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+#addNew h1,
 form {
   text-align: center;
 }
@@ -52,4 +60,59 @@ form input {
 #submit {
   width: auto;
   margin-left: 35%;
+}
+
+.active {
+  color: goldenrod;
+}
+
+.contact {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 1rem;
+}
+
+.contact h2 {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.contact p,
+.contact ul {
+  text-align: left;
+  line-height: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact ul {
+  margin-left: 3rem;
+}
+
+.list {
+  display: block;
+  width: 100%;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.list h2 {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+footer {
+  width: 100%;
+  border: 3px solid black;
+  padding: 0.5rem;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
 }
