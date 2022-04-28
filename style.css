@@ -33,7 +33,8 @@ tr:nth-child(even) {
   text-align: right;
 }
 
-hr {
+.list hr {
+  margin: auto;
   width: 270px;
   height: 5px;
   background-color: black;
