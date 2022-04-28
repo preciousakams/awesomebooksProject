@@ -124,14 +124,14 @@ footer p {
   margin-right: 2.5%;
 }
 
-.navbar-nav {
+.nav-menu {
   list-style-type: none;
   border: 6px solid;
   margin: 0 27px;
   padding: 5px 24px 24px 24px;
 }
 
-.navbar-nav li {
+.nav-menu li {
   float: right;
 }
 
@@ -140,16 +140,12 @@ footer p {
   border-right: 3px solid;
 }
 
-.navbar-nav .logo {
+.nav-menu .logo {
   float: left;
 }
 
-.nav-item a {
+.navItems a {
   display: block;
   text-decoration: none;
   margin: 0 12px;
-}
-
-.active {
-  color: goldenrod;
 }

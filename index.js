@@ -1,7 +1,7 @@
 /* eslint-disable max-classes-per-file */
 
 const btnList = document.querySelector('#btn-list');
-const addNewBtn = document.querySelector('#btn-add-new');
+const addNewBtn = document.querySelector('#add-new');
 const contactBtn = document.querySelector('#btn-contact');
 
 const listSection = document.querySelector('.list');
