@@ -56,10 +56,6 @@ form input {
   margin-left: 35%;
 }
 
-.active {
-  color: blue;
-}
-
 .contact {
   display: none;
   flex-direction: column;
@@ -140,6 +136,9 @@ footer p {
 .nav-item a {
   display: block;
   text-decoration: none;
-  color: black;
   margin: 0 12px;
+}
+
+.active {
+  color: goldenrod;
 }
