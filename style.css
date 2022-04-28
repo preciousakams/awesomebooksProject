@@ -56,20 +56,33 @@ form input {
   margin-left: 35%;
 }
 
-.contact {
+.container2 {
   display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  border: 5px solid black;
+  width: 94%;
+  margin-left: 2rem;
+  margin-right: 4rem;
   margin-top: 1rem;
+  text-align: center;
 }
 
-.contact h2 {
-  font-size: 3rem;
-  margin-bottom: 3rem;
+.contact-items {
+  width: 60%;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 20px auto 0 auto;
+}
+
+.contact-title {
+  font-size: 35px;
   text-align: center;
+  margin: 0 0 10px 0;
+}
+
+.contact-info {
+  width: 90%;
+  text-align: left;
+  margin: 20px auto 0 auto;
 }
 
 footer p {
@@ -80,17 +93,6 @@ footer p {
   bottom: 0;
   margin-left: 2%;
   font-weight: bold;
-}
-
-.contact p,
-.contact ul {
-  text-align: left;
-  line-height: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.contact ul {
-  margin-left: 3rem;
 }
 
 .list {
