@@ -35,6 +35,14 @@ contactBtn.addEventListener('click', () => {
   contactSection.style.display = 'flex';
 });
 
+function displayClock() {
+  const display = new Date().toLocaleTimeString();
+  document.getElementById('clock').innerHTML = display;
+  setTimeout(displayClock, 1000);
+}
+
+window.onload = displayClock();
+
 class Book {
   constructor(title, author) {
     this.title = title;
