@@ -35,9 +35,28 @@ contactBtn.addEventListener('click', () => {
   contactSection.style.display = 'flex';
 });
 
+function formatAMPM(date) {
+  let hours = date.getHours();
+  const ampm = hours >= 12 ? 'pm' : 'am';
+  hours %= 12;
+  hours = hours || 12; // the hour '0' should be '12'
+  // eslint-disable-next-line no-use-before-define
+  let minutes = date.getMinutes();
+  let seconds = date.getSeconds();
+  const strTime = `${hours}:${minutes}:${seconds} ${ampm}`;
+  return strTime;
+}
+
 function displayClock() {
-  const display = new Date().toLocaleTimeString();
-  document.getElementById('clock').innerHTML = display;
+  const display = new Date(); // .toLocaleTimeString();
+  const time = display.toLocaleTimeString();
+  const month = display.getUTCMonth() + 1;
+  const day = display.getUTCDate();
+  const year = display.getUTCFullYear();
+  const monthName = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+    'August', 'September', 'October', 'November', 'December'];
+  const showTime = `${monthName[month - 1]} ${day}th ${year} ${formatAMPM(display)}`;
+  document.getElementById('clock').innerHTML = showTime;
   setTimeout(displayClock, 1000);
 }
 
