@@ -41,6 +41,8 @@ function displayClock() {
   setTimeout(displayClock, 1000);
 }
 
+window.onload = displayClock();
+
 class Book {
   constructor(title, author) {
     this.title = title;
